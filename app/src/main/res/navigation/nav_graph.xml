@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/todoFragment">
+
+    <!-- Existing Fragment Entries -->
+    <fragment
+        android:id="@+id/todoFragment"
+        android:name="com.a101apps.endgame.todo.TodoFragment"
+        android:label="To-Do"
+        tools:layout="@layout/fragment_todo" />
+
+    <!-- Updated ProjectsFragment Entry -->
+    <fragment
+        android:id="@+id/projectsFragment"
+        android:name="com.a101apps.endgame.project.ProjectsFragment"
+        android:label="Project List"
+        tools:layout="@layout/fragment_project_list">
+        <action
+            android:id="@+id/action_projectsFragment_to_project1Fragment"
+            app:destination="@id/project1Fragment" />
+    </fragment>
+
+    <!-- New Project1Fragment Entry -->
+    <fragment
+        android:id="@+id/project1Fragment"
+        android:name="com.a101apps.endgame.project.Project1Fragment"
+        android:label="Project Details"
+        tools:layout="@layout/fragment_project1">
+        <action
+            android:id="@+id/action_project1Fragment_self"
+            app:destination="@id/project1Fragment" />
+        <action
+            android:id="@+id/action_project1Fragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <argument
+            android:name="projectUuid"
+            app:argType="string" />
+        <argument
+            android:name="parentDetailUuid"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.a101apps.endgame.SettingsFragment"
+        android:label="Settings"
+        tools:layout="@layout/fragment_settings" />
+
+</navigation>

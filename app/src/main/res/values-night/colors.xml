@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="icon_color">#FFFFFF</color> <!-- White -->
+
+    <color name="menu_icon_color">#FFFFFF</color> <!-- White for dark theme -->
+    <color name="textColorPrimary">@android:color/white</color>
+
+</resources>
